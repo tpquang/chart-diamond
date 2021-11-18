@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/chart-diamond/static/css/main.2ae47eeb.chunk.css",
-    "main.js": "/chart-diamond/static/js/main.f81971c3.chunk.js",
-    "main.js.map": "/chart-diamond/static/js/main.f81971c3.chunk.js.map",
+    "main.js": "/chart-diamond/static/js/main.8c67d7fb.chunk.js",
+    "main.js.map": "/chart-diamond/static/js/main.8c67d7fb.chunk.js.map",
     "runtime-main.js": "/chart-diamond/static/js/runtime-main.c804d844.js",
     "runtime-main.js.map": "/chart-diamond/static/js/runtime-main.c804d844.js.map",
     "static/css/2.a95be28f.chunk.css": "/chart-diamond/static/css/2.a95be28f.chunk.css",
-    "static/js/2.70a006e4.chunk.js": "/chart-diamond/static/js/2.70a006e4.chunk.js",
-    "static/js/2.70a006e4.chunk.js.map": "/chart-diamond/static/js/2.70a006e4.chunk.js.map",
+    "static/js/2.ffd667cf.chunk.js": "/chart-diamond/static/js/2.ffd667cf.chunk.js",
+    "static/js/2.ffd667cf.chunk.js.map": "/chart-diamond/static/js/2.ffd667cf.chunk.js.map",
     "static/js/3.62474535.chunk.js": "/chart-diamond/static/js/3.62474535.chunk.js",
     "static/js/3.62474535.chunk.js.map": "/chart-diamond/static/js/3.62474535.chunk.js.map",
     "index.html": "/chart-diamond/index.html",
     "static/css/2.a95be28f.chunk.css.map": "/chart-diamond/static/css/2.a95be28f.chunk.css.map",
     "static/css/main.2ae47eeb.chunk.css.map": "/chart-diamond/static/css/main.2ae47eeb.chunk.css.map",
-    "static/js/2.70a006e4.chunk.js.LICENSE.txt": "/chart-diamond/static/js/2.70a006e4.chunk.js.LICENSE.txt"
+    "static/js/2.ffd667cf.chunk.js.LICENSE.txt": "/chart-diamond/static/js/2.ffd667cf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c804d844.js",
     "static/css/2.a95be28f.chunk.css",
-    "static/js/2.70a006e4.chunk.js",
+    "static/js/2.ffd667cf.chunk.js",
     "static/css/main.2ae47eeb.chunk.css",
-    "static/js/main.f81971c3.chunk.js"
+    "static/js/main.8c67d7fb.chunk.js"
   ]
 }
