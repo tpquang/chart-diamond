@@ -8,6 +8,19 @@ function Diamond() {
     const [data2, setData2] = useState([]);
     const [mon, setMon] = useState([]);
     const [land, setLand] = useState([]);
+    const [counter, setCounter] = useState(0);
+    useEffect(
+        () => {
+            const id = setTimeout(() => {
+                setCounter(counter + 1);
+                getData()
+            }, 5000);
+            return () => {
+                clearTimeout(id);
+            };
+        },
+        [counter],
+    );
     const getData = () => {
         setData([])
         setData2([])
@@ -22,7 +35,7 @@ function Diamond() {
                 setData(res.data.list)
             })
             .catch(error => console.log(error));
-            axios.get(`https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=3&sortBy=fixed_price&order=asc&name=purple%20diamond`)
+        axios.get(`https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=3&sortBy=fixed_price&order=asc&name=purple%20diamond`)
             .then(res => {
                 const tempData = res.data.list
                 tempData.forEach(element => {
@@ -31,7 +44,7 @@ function Diamond() {
                 setData2(res.data.list)
             })
             .catch(error => console.log(error));
-            axios.get(`https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=3&sortBy=fixed_price&name=&order=asc&saleType&category=13&tokenType`)
+        axios.get(`https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=3&sortBy=fixed_price&name=&order=asc&saleType&category=13&tokenType`)
             .then(res => {
                 const tempData = res.data.list
                 tempData.forEach(element => {
@@ -40,7 +53,7 @@ function Diamond() {
                 setMon(res.data.list)
             })
             .catch(error => console.log(error));
-            axios.get(`https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=3&sortBy=fixed_price&order=asc&name=&saleType&category=20&tokenType`)
+        axios.get(`https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=3&sortBy=fixed_price&order=asc&name=&saleType&category=20&tokenType`)
             .then(res => {
                 const tempData = res.data.list
                 tempData.forEach(element => {
@@ -62,7 +75,7 @@ function Diamond() {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',
-            render: text => <b style={{color: '#a5a51a'}}>{text}</b>,
+            render: text => <b style={{ color: '#a5a51a' }}>{text}</b>,
         },
         {
             title: 'Price',
@@ -76,7 +89,7 @@ function Diamond() {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',
-            render: text => <b style={{color: '#8f02d7'}}>{text}</b>,
+            render: text => <b style={{ color: '#8f02d7' }}>{text}</b>,
         },
         {
             title: 'Price',
@@ -90,7 +103,7 @@ function Diamond() {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',
-            render: text => <b style={{color: '#a5a51a'}}>{text}</b>,
+            render: text => <b style={{ color: '#a5a51a' }}>{text}</b>,
         },
         {
             title: 'Price',
@@ -102,7 +115,7 @@ function Diamond() {
             title: 'Image',
             dataIndex: 'image_url',
             key: 'image_url',
-            render: img => <img src={img} style={{width: 50, height: 50}}></img>,
+            render: img => <img src={img} style={{ width: 50, height: 50 }}></img>,
         },
     ];
     const columnsLand = [
@@ -110,7 +123,7 @@ function Diamond() {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',
-            render: text => <b style={{color: '#a5a51a'}}>{text}</b>,
+            render: text => <b style={{ color: '#a5a51a' }}>{text}</b>,
         },
         {
             title: 'Price',
@@ -120,14 +133,14 @@ function Diamond() {
         },
     ];
     return (
-        <div style={{textAlign: 'center'}}>
-            <div style={{display: 'flex'}}>
-            <Table style={{margin: 20}} dataSource={data && data} columns={columns} pagination={false}/>
-            <Table style={{margin: 20}} dataSource={data2 && data2} columns={columns2} pagination={false}/>
+        <div style={{ textAlign: 'center' }}>
+            <div style={{ display: 'flex' }}>
+                <Table style={{ margin: 20 }} dataSource={data && data} columns={columns} pagination={false} />
+                <Table style={{ margin: 20 }} dataSource={data2 && data2} columns={columns2} pagination={false} />
             </div>
-            <div style={{display: 'flex'}}>
-            <Table style={{margin: 20}} dataSource={mon && mon} columns={columnsMon} pagination={false}/>
-            <Table style={{margin: 20}} dataSource={land && land} columns={columnsLand} pagination={false}/>
+            <div style={{ display: 'flex' }}>
+                <Table style={{ margin: 20 }} dataSource={mon && mon} columns={columnsMon} pagination={false} />
+                <Table style={{ margin: 20 }} dataSource={land && land} columns={columnsLand} pagination={false} />
             </div>
             <Button type="primary" onClick={() => refreshData()}>Refresh</Button>
         </div>
