@@ -69,14 +69,11 @@ function Diamond() {
             })
             .catch(error => console.log(error));
     }
-    const getDataAll = () => {
-        getDiamondPurple()
-        getLand([])
-        getMetamon([])
-        getPosition([])
-        
-        
-        
+    const getDataAll = async () => {
+        await getDiamondPurple()
+        await getLand([])
+        await getMetamon([])
+        await getPosition([])
     }
     const refreshData = () => {
         getDataAll()
@@ -98,6 +95,12 @@ function Diamond() {
             key: 'fixed_price',
             render: text => <b>{text}</b>,
         },
+        {
+            title: 'Mua',
+            dataIndex: 'id',
+            key: 'id',
+            render: id => <a target='_blank' href={'https://market.radiocaca.com/#/market-place/'+ id} style={{padding: 10, backgroundColor: 'lightgrey', border: 0, borderRadius: 5}}>{'Mua'}</a>,
+        },
     ];
     const columnsDiamond = [
         {
@@ -111,6 +114,12 @@ function Diamond() {
             dataIndex: 'fixed_price',
             key: 'fixed_price',
             render: text => <b>{text}</b>,
+        },
+        {
+            title: 'Mua',
+            dataIndex: 'id',
+            key: 'id',
+            render: id => <a target='_blank' href={'https://market.radiocaca.com/#/market-place/'+ id} style={{padding: 10, backgroundColor: 'lightgrey', border: 0, borderRadius: 5}}>{'Mua'}</a>,
         },
     ];
     const columnsMon = [
@@ -132,6 +141,12 @@ function Diamond() {
             key: 'image_url',
             render: img => <img src={img} style={{ width: 50, height: 50 }}></img>,
         },
+        {
+            title: 'Mua',
+            dataIndex: 'id',
+            key: 'id',
+            render: id => <a target='_blank' href={'https://market.radiocaca.com/#/market-place/'+ id} style={{padding: 10, backgroundColor: 'lightgrey', border: 0, borderRadius: 5}}>{'Mua'}</a>,
+        },
     ];
     const columnsLand = [
         {
@@ -146,6 +161,12 @@ function Diamond() {
             key: 'fixed_price',
             render: text => <b>{text}</b>,
         },
+        {
+            title: 'Mua',
+            dataIndex: 'id',
+            key: 'id',
+            render: id => <a target='_blank' href={'https://market.radiocaca.com/#/market-place/'+ id} style={{padding: 10, backgroundColor: 'lightgrey', border: 0, borderRadius: 5}}>{'Mua'}</a>,
+        },
     ];
     return (
         <div style={{ textAlign: 'center' }}>
@@ -154,10 +175,9 @@ function Diamond() {
                 <Table style={{ margin: 20 }} dataSource={dataDiamond && dataDiamond} columns={columnsDiamond} pagination={false} />
             </div>
             <div style={{ display: 'flex' }}>
-                <Table style={{ margin: 20 }} dataSource={mon && mon} columns={columnsMon} pagination={false} />
                 <Table style={{ margin: 20 }} dataSource={land && land} columns={columnsLand} pagination={false} />
+                <Table style={{ margin: 20 }} dataSource={mon && mon} columns={columnsMon} pagination={false} />
             </div>
-            <Button type="primary" onClick={() => refreshData()}>Refresh</Button>
         </div>
     )
 }
