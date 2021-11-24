@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/chart-diamond/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/chart-diamond/static/js/main.2d462419.chunk.js",
-    "main.js.map": "/chart-diamond/static/js/main.2d462419.chunk.js.map",
-    "runtime-main.js": "/chart-diamond/static/js/runtime-main.c9b68901.js",
-    "runtime-main.js.map": "/chart-diamond/static/js/runtime-main.c9b68901.js.map",
+    "main.css": "/chart-diamond/static/css/main.2ae47eeb.chunk.css",
+    "main.js": "/chart-diamond/static/js/main.b74f5e84.chunk.js",
+    "main.js.map": "/chart-diamond/static/js/main.b74f5e84.chunk.js.map",
+    "runtime-main.js": "/chart-diamond/static/js/runtime-main.2f18c52c.js",
+    "runtime-main.js.map": "/chart-diamond/static/js/runtime-main.2f18c52c.js.map",
     "static/css/2.a95be28f.chunk.css": "/chart-diamond/static/css/2.a95be28f.chunk.css",
-    "static/js/2.25b34b2f.chunk.js": "/chart-diamond/static/js/2.25b34b2f.chunk.js",
-    "static/js/2.25b34b2f.chunk.js.map": "/chart-diamond/static/js/2.25b34b2f.chunk.js.map",
-    "static/js/3.47d511f0.chunk.js": "/chart-diamond/static/js/3.47d511f0.chunk.js",
-    "static/js/3.47d511f0.chunk.js.map": "/chart-diamond/static/js/3.47d511f0.chunk.js.map",
+    "static/js/2.06501086.chunk.js": "/chart-diamond/static/js/2.06501086.chunk.js",
+    "static/js/2.06501086.chunk.js.map": "/chart-diamond/static/js/2.06501086.chunk.js.map",
+    "static/js/3.b7f604c2.chunk.js": "/chart-diamond/static/js/3.b7f604c2.chunk.js",
+    "static/js/3.b7f604c2.chunk.js.map": "/chart-diamond/static/js/3.b7f604c2.chunk.js.map",
     "index.html": "/chart-diamond/index.html",
     "static/css/2.a95be28f.chunk.css.map": "/chart-diamond/static/css/2.a95be28f.chunk.css.map",
-    "static/css/main.6dea0f05.chunk.css.map": "/chart-diamond/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.25b34b2f.chunk.js.LICENSE.txt": "/chart-diamond/static/js/2.25b34b2f.chunk.js.LICENSE.txt"
+    "static/css/main.2ae47eeb.chunk.css.map": "/chart-diamond/static/css/main.2ae47eeb.chunk.css.map",
+    "static/js/2.06501086.chunk.js.LICENSE.txt": "/chart-diamond/static/js/2.06501086.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c9b68901.js",
+    "static/js/runtime-main.2f18c52c.js",
     "static/css/2.a95be28f.chunk.css",
-    "static/js/2.25b34b2f.chunk.js",
-    "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.2d462419.chunk.js"
+    "static/js/2.06501086.chunk.js",
+    "static/css/main.2ae47eeb.chunk.css",
+    "static/js/main.b74f5e84.chunk.js"
   ]
 }
