@@ -4,8 +4,8 @@ import 'antd/dist/antd.css';
 import axios from 'axios';
 
 function Diamond() {
-    const [data, setData] = useState([]);
-    const [data2, setData2] = useState([]);
+    const [position, setPosition] = useState([]);
+    const [dataDiamond, setDataDiamond] = useState([]);
     const [mon, setMon] = useState([]);
     const [land, setLand] = useState([]);
     const [counter, setCounter] = useState(0);
@@ -13,37 +13,28 @@ function Diamond() {
         () => {
             const id = setTimeout(() => {
                 setCounter(counter + 1);
-                getData()
-            }, 5000);
+                getDataAll()
+            }, 10000);
             return () => {
                 clearTimeout(id);
             };
         },
         [counter],
     );
-    const getData = () => {
-        setData([])
-        setData2([])
-        setMon([])
-        setLand([])
-        axios.get(`https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=3&sortBy=fixed_price&name=&order=asc&saleType&category=16&tokenType`)
-            .then(res => {
-                const tempData = res.data.list
-                tempData.forEach(element => {
-                    element.fixed_price = new Intl.NumberFormat().format(element.fixed_price)
-                });
-                setData(res.data.list)
-            })
-            .catch(error => console.log(error));
+    const getDiamondPurple = async () => {
+        setDataDiamond([])
         axios.get(`https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=3&sortBy=fixed_price&order=asc&name=purple%20diamond`)
             .then(res => {
                 const tempData = res.data.list
                 tempData.forEach(element => {
                     element.fixed_price = new Intl.NumberFormat().format(element.fixed_price)
                 });
-                setData2(res.data.list)
+                setDataDiamond(res.data.list)
             })
             .catch(error => console.log(error));
+    }
+    const getMetamon = async () => {
+        setMon([])
         axios.get(`https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=3&sortBy=fixed_price&name=&order=asc&saleType&category=13&tokenType`)
             .then(res => {
                 const tempData = res.data.list
@@ -53,7 +44,10 @@ function Diamond() {
                 setMon(res.data.list)
             })
             .catch(error => console.log(error));
-        axios.get(`https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=3&sortBy=fixed_price&order=asc&name=&saleType&category=20&tokenType`)
+    }
+    const getLand = async () => {
+        setLand([])
+        axios.get(`https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=3&sortBy=fixed_price&name=&order=asc&saleType&category=17&tokenType`)
             .then(res => {
                 const tempData = res.data.list
                 tempData.forEach(element => {
@@ -63,19 +57,40 @@ function Diamond() {
             })
             .catch(error => console.log(error));
     }
+    const getPosition = async () => {
+        setPosition([])
+        axios.get(`https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=3&sortBy=fixed_price&name=&order=asc&saleType&category=15&tokenType`)
+            .then(res => {
+                const tempData = res.data.list
+                tempData.forEach(element => {
+                    element.fixed_price = new Intl.NumberFormat().format(element.fixed_price)
+                });
+                setPosition(res.data.list)
+            })
+            .catch(error => console.log(error));
+    }
+    const getDataAll = () => {
+        getDiamondPurple()
+        getLand([])
+        getMetamon([])
+        getPosition([])
+        
+        
+        
+    }
     const refreshData = () => {
-        getData()
+        getDataAll()
     }
     useEffect(() => {
-        getData()
+        getDataAll()
     }, []);
 
-    const columns = [
+    const columnsPosition = [
         {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',
-            render: text => <b style={{ color: '#a5a51a' }}>{text}</b>,
+            render: text => <b style={{ color: 'green' }}>{text}</b>,
         },
         {
             title: 'Price',
@@ -84,7 +99,7 @@ function Diamond() {
             render: text => <b>{text}</b>,
         },
     ];
-    const columns2 = [
+    const columnsDiamond = [
         {
             title: 'Name',
             dataIndex: 'name',
@@ -123,7 +138,7 @@ function Diamond() {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',
-            render: text => <b style={{ color: '#a5a51a' }}>{text}</b>,
+            render: text => <b style={{ color: 'darkGray' }}>{text}</b>,
         },
         {
             title: 'Price',
@@ -135,8 +150,8 @@ function Diamond() {
     return (
         <div style={{ textAlign: 'center' }}>
             <div style={{ display: 'flex' }}>
-                <Table style={{ margin: 20 }} dataSource={data && data} columns={columns} pagination={false} />
-                <Table style={{ margin: 20 }} dataSource={data2 && data2} columns={columns2} pagination={false} />
+                <Table style={{ margin: 20 }} dataSource={position && position} columns={columnsPosition} pagination={false} />
+                <Table style={{ margin: 20 }} dataSource={dataDiamond && dataDiamond} columns={columnsDiamond} pagination={false} />
             </div>
             <div style={{ display: 'flex' }}>
                 <Table style={{ margin: 20 }} dataSource={mon && mon} columns={columnsMon} pagination={false} />
