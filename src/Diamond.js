@@ -59,7 +59,7 @@ function Diamond() {
     }
     const getPosition = async () => {
         setPosition([])
-        axios.get(`https://market-api.radiocaca.com/nft-sales?pageNo=1&pageSize=3&sortBy=fixed_price&name=&order=asc&saleType&category=15&tokenType`)
+        axios.get(`https://market-api.radiocaca.com/nft-sales?saleType&category=16&tokenType&tokenId=0&token_standard=BEP1155&pageNo=1&pageSize=3&sortBy=fixed_price&order=asc&min_count=1&max_count=500`)
             .then(res => {
                 const tempData = res.data.list
                 tempData.forEach(element => {
